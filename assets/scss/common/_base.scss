@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #E6E7E8;
+  --blue: #014a81;
+
+  --primary: #004a80;
+  --second: #8ac042;
+  --text-body: #333;
+}
+
+$primary-font: 'Arial', serif;
+$second-font: 'Arial', serif;
+//$awesome-font: 'Font Awesome 5 Free', serif;
+
+/* Base Setting
+---------------------------------------- */
+body {
+	padding: 0;
+	font-family: $primary-font;
+	margin: 0;
+	font-size: 16px;
+	overflow-wrap: break-word;
+	font-weight: 400;
+	color: var(--text-body);
+	overflow-x: hidden;
+	line-height: 1.5;
+	position: relative;
+	width: 100%;
+	background: var(--white);
+  max-width: 100%;
+}
+
+a {
+  transition: all 0.3s;
+  color: var(--primary);
+  outline: none !important;
+
+  &:hover {
+    opacity: 1;
+    color: var(--second);
+  }
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $primary-font;
+  font-weight: 700; 
+  color: var(--primary);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.5;
+
+  @include breakpoint(md) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.45;
+
+  @include breakpoint(md) {
+    font-size: 30px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}

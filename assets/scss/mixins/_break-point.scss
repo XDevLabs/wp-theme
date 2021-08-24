@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    Breakpoint follow Bootstrap
+\*------------------------------------*/
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media only screen and (min-width: $xs) { @content; }
+  }
+
+  @else if $point == sm {
+    @media only screen and (min-width: $sm) { @content; }
+  }
+
+  @else if $point == md {
+    @media only screen and (min-width: $md) { @content; }
+  }
+
+  @else if $point == lg {
+    @media only screen and (min-width: $lg) { @content; }
+  }
+
+  @else if $point == xl {
+    @media only screen and (min-width: $xl) { @content; }
+  }
+
+  @else if $point == xxl {
+    @media only screen and (min-width: $xxl) { @content; }
+  }
+
+  @else {
+    @media only screen and (min-width : $point) { @content; }
+  }
+}
+
+@mixin breakpoint-down($point) {
+  @if $point == xs {
+    @media only screen and (max-width: $xs - 1) { @content; }
+  }
+
+  @else if $point == sm {
+    @media only screen and (max-width: $sm - 1) { @content; }
+  }
+
+  @else if $point == md {
+    @media only screen and (max-width: $md - 1) { @content; }
+  }
+
+  @else if $point == lg {
+    @media only screen and (max-width: $lg - 1) { @content; }
+  }
+
+  @else if $point == xl {
+    @media only screen and (max-width: $xl - 1) { @content; }
+  }
+
+  @else if $point == xxl {
+    @media only screen and (max-width: $xxl - 1) { @content; }
+  }
+
+  @else {
+    @media only screen and (max-width : $point) { @content; }
+  }
+}
