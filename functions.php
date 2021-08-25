@@ -143,9 +143,11 @@ function xdevlabs_scripts() {
 	wp_enqueue_style( 'xdevlabs-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'xdevlabs-style', 'rtl', 'replace' );
 
+	wp_enqueue_style( 'font-awesome-5', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css', null, '5.15.1' );
+
 	wp_enqueue_style( 'rhobii-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
 
-	wp_enqueue_script( 'xdevlabs-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'xdevlabs-navigation', get_template_directory_uri() . '/assets/js/common.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

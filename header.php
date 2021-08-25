@@ -26,36 +26,24 @@
 			<header id="header" class="header">
 				<div class="container">
 					<div class="header__inner">
-						<div class="site-branding">
-							<?php
-							the_custom_logo();
-							if ( is_front_page() && is_home() ) :
-								?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php
-						else :
-							?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
-						endif;
-						$xdevlabs_description = get_bloginfo( 'description', 'display' );
-						if ( $xdevlabs_description || is_customize_preview() ) :
-							?>
-							<p class="site-description"><?php echo $xdevlabs_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-						<?php endif; ?>
-					</div><!-- .site-branding -->
+						<div class="header__branding">
+							<?php if ( has_custom_logo() ) {
+								the_custom_logo();
+							}
+							else { ?>
+								<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							<?php } ?>
+							<a href="#" class="header__toogle"><span></span></a>
+						</div><!-- .site-branding -->
 
-					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'xdevlabs' ); ?></button>
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'main-menu',
-								'menu_id'        => 'primary-menu',
-							)
-						);
-						?>
-					</nav><!-- #site-navigation -->
+						<nav id="site-navigation" class="main-navigation">
+							<?php wp_nav_menu(
+								array(
+									'theme_location' => 'main-menu',
+									'menu_id'        => 'primary-menu',
+								)
+							); ?>
+						</nav><!-- #site-navigation -->
+					</div>
 				</div>
-			</div>
-		</header><!-- #header -->
+			</header><!-- #header -->
