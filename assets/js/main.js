@@ -5,15 +5,15 @@
         $('.header__toogle').click(function(event) {
             event.preventDefault()
             $(this).toggleClass('active')
-            header.toggleClass('shown-nav')
+            $('.header').toggleClass('shown-nav')
         })
 
         $('.main-navigation .menu-item-has-children').append('<span class="toogle-sub-menu"></span>')
 
-        $('.main-navigation .menu-item-has-children').on('click', '.toogle-sub-menu', function(event) {
+        $('.main-navigation .menu-item-has-children').on('click', '> .toogle-sub-menu', function(event) {
             event.preventDefault()
-            let parent = $(this).parent('.menu-item-has-children')
-            parent.toggleClass('shown-sub').find('> .sub-menu').slideToggle()
+            let parent = $(this).closest('.menu-item-has-children')
+            parent.toggleClass('shown-sub')
         })
     })
 })(jQuery)
