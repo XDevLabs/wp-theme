@@ -8,6 +8,8 @@
  */
 
 get_header();
+
+get_template_part( 'template-parts/page', 'title' );
 ?>
 <div class="main-sidebar">
 	<div class="container">
@@ -15,15 +17,6 @@ get_header();
 			<main id="primary" class="site-main">
 
 				<?php if ( have_posts() ) : ?>
-
-					<header class="page-header">
-						<h1 class="page-title">
-							<?php
-							/* translators: %s: search query. */
-							printf( esc_html__( 'Search Results for: %s', 'xdevlabs' ), '<span>' . get_search_query() . '</span>' );
-							?>
-						</h1>
-					</header><!-- .page-header -->
 
 					<?php
 					/* Start the Loop */
@@ -35,11 +28,11 @@ get_header();
 						 * If you want to overload this in a child theme then include a file
 						 * called content-search.php and that will be used instead.
 						 */
-						get_template_part( 'template-parts/content', 'search' );
+						get_template_part( 'template-parts/content', 'list' );
 
 					endwhile;
 
-					the_posts_navigation();
+					get_template_part( 'template-parts/pagination' );
 
 				else :
 

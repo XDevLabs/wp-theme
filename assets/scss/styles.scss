@@ -10,7 +10,10 @@
 @import "common/page";
 @import "common/post";
 
-/** Pages **/
+/** Partials **/
+@import "partials/comments";
+@import "partials/sidebar";
+@import "partials/pagination";
 
 /** Sections **/
 
