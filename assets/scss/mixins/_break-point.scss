@@ -1,71 +1,105 @@
 /*------------------------------------*\
-    Breakpoint follow Bootstrap
+    breakpoint vars
 \*------------------------------------*/
+$break-320: 20em;
+$break-321: 20.0625em;
+$break-480: 30em;
+$break-600: 37em;
+$break-768: 48em;
+$break-769: 48.065em;
+$break-980: 61.25em;
+$break-1024: 64em;
+$break-1200: 75em;
+$break-1224: 76.5em;
+$break-1280: 80em;
+$break-1366: 85.375em;
+$break-1824: 114em;
 
-$xs: 0;
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-$xxl: 1400px;
-
-
+/*------------------------------------*\
+    breakpoint mixin
+\*------------------------------------*/
 @mixin breakpoint($point) {
-  @if $point == xs {
-    @media only screen and (min-width: $xs) { @content; }
-  }
+	@if $point == tablet {
+		@media (min-width: $break-768) {
+			@content;
+		}
+	} @else if $point == desktop {
+		@media (min-width: $break-1280) {
+			@content;
+		}
+	}
 
-  @else if $point == sm {
-    @media only screen and (min-width: $sm) { @content; }
-  }
+	// Smartphones (portrait and landscape)
+	@else if $point == mobile {
+		@media only screen and (min-device-width: $break-320) and (max-device-width: $break-480) {
+			@content;
+		}
+	}
 
-  @else if $point == md {
-    @media only screen and (min-width: $md) { @content; }
-  }
+	// Smartphones (landscape)
+	@else if $point == mobileLandscape {
+		@media only screen and (min-width: $break-321) {
+			@content;
+		}
+	}
 
-  @else if $point == lg {
-    @media only screen and (min-width: $lg) { @content; }
-  }
+	// Smartphones (portrait)
+	@else if $point == mobilePortrait {
+		@media only screen and (max-width: $break-320) {
+			@content;
+		}
+	}
 
-  @else if $point == xl {
-    @media only screen and (min-width: $xl) { @content; }
-  }
+	// iPads (portrait and landscape)
+	@else if $point == ipad {
+		@media only screen and (min-device-width: $break-768) and (max-device-width: $break-1024) {
+			@content;
+		}
+	}
 
-  @else if $point == xxl {
-    @media only screen and (min-width: $xxl) { @content; }
-  }
+	// iPads (landscape)
+	@else if $point == ipadLandscape {
+		@media only screen and (min-device-width: $break-768) and (max-device-width: $break-1024) and (orientation: landscape) {
+			@content;
+		}
+	}
 
-  @else {
-    @media only screen and (min-width : $point) { @content; }
-  }
+	// iPads (portrait)
+	@else if $point == ipadPortrait {
+		@media only screen and (min-device-width: $break-768) and (max-device-width: $break-1024) and (orientation: portrait) {
+			@content;
+		}
+	}
+
+	// Desktops and laptops
+	@else if $point == desktopLaptop {
+		@media only screen and (min-width: $break-1224) {
+			@content;
+		}
+	}
+
+	// Large screens
+	@else if $point == desktopLarge {
+		@media only screen and (min-width: $break-1824) {
+			@content;
+		}
+	}
+
+	// iPhone 4
+	@else if $point == iphone4 {
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $point) {
+			@content;
+		}
+	}
 }
 
+/** Break desktop first**/
 @mixin breakpoint-down($point) {
-  @if $point == xs {
-    @media only screen and (max-width: $xs - 1) { @content; }
-  }
-
-  @else if $point == sm {
-    @media only screen and (max-width: $sm - 1) { @content; }
-  }
-
-  @else if $point == md {
-    @media only screen and (max-width: $md - 1) { @content; }
-  }
-
-  @else if $point == lg {
-    @media only screen and (max-width: $lg - 1) { @content; }
-  }
-
-  @else if $point == xl {
-    @media only screen and (max-width: $xl - 1) { @content; }
-  }
-
-  @else if $point == xxl {
-    @media only screen and (max-width: $xxl - 1) { @content; }
-  }
-
-  @else {
-    @media only screen and (max-width : $point) { @content; }
-  }
+	@media only screen and (max-width: $point) {
+		@content;
+	}
 }
