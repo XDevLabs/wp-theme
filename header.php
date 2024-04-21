@@ -33,7 +33,7 @@
 							else { ?>
 								<a class="custom-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 							<?php } ?>
-							<a href="#" class="header__toogle"><span></span></a>
+							<a href="#" class="header__toggle"><span></span></a>
 						</div><!-- .site-branding -->
 
 						<nav id="site-navigation" class="main-navigation">
@@ -43,7 +43,7 @@
 									'menu_id'        => 'primary-menu',
 								)
 							); ?>
-							<a href="#" class="header__toogle"><span></span></a>
+							<a href="#" class="header__toggle"><span></span></a>
 						</nav><!-- #site-navigation -->
 					</div>
 				</div>

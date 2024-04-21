@@ -54,7 +54,7 @@ body {
 		}
 	}
 
-	&__toogle {
+	&__toggle {
 		position: relative;
 		width: 48px;
 		height: 48px;
@@ -67,7 +67,7 @@ body {
 		padding: 1px 6px;
 		z-index: 99;
 
-		@include breakpoint(md) {
+		@include breakpoint(tablet) {
 			display: none;
 		}
 
@@ -125,7 +125,7 @@ body {
 		transform: translateX(400px);
 		transition: all 0.3s;
 
-		.header__toogle {
+		.header__toggle {
 			position: absolute;
 			top: 10px;
 			right: 20px;
@@ -151,7 +151,7 @@ body {
 	}
 
 	.menu {
-		@include breakpoint(md) {
+		@include breakpoint(tablet) {
 			display: flex;
 		}
 
@@ -165,7 +165,7 @@ body {
 				display: block;
 				padding: 10px 0;
 
-				@include breakpoint(md) {
+				@include breakpoint(tablet) {
 					color: var(--text-body);
 					padding: 10px 20px;
 				}
@@ -175,7 +175,7 @@ body {
 				padding-left: 25px;
 				display: none;
 
-				@include breakpoint(md) {
+				@include breakpoint(tablet) {
 					position: absolute;
 					width: 200px;
 					background: var(--white);
@@ -208,12 +208,12 @@ body {
 					position: relative;
 					padding-right: 50px;
 
-					@include breakpoint(md) {
+					@include breakpoint(tablet) {
 						padding-right: 35px;
 					}
 
 					&::after {
-						@include breakpoint(md) {
+						@include breakpoint(tablet) {
 							content: "\f054";
 							font-family: $awesome-font;
 							font-weight: 900;
@@ -225,7 +225,7 @@ body {
 					}
 				}
 
-				.toogle-sub-menu {
+				.toggle-sub-menu {
 					@include breakpoint-down(md) {
 						position: absolute;
 						top: 0;
@@ -276,7 +276,7 @@ body {
 
 		> li {
 			+ li {
-				@include breakpoint(md) {
+				@include breakpoint(tablet) {
 					margin-left: 20px;
 				}
 			}
@@ -284,7 +284,7 @@ body {
 			> a {
 				color: var(--white);
 
-				@include breakpoint(md) {
+				@include breakpoint(tablet) {
 					padding: 0;
 				}
 			}
@@ -296,12 +296,12 @@ body {
 
 			&.menu-item-has-children {
 				> a {
-					@include breakpoint(md) {
+					@include breakpoint(tablet) {
 						padding-right: 18px;
 					}
 
 					&::after {
-						@include breakpoint(md) {
+						@include breakpoint(tablet) {
 							content: "\f078";
 							top: 3px;
 							right: 0;

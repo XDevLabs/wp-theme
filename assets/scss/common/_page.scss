@@ -12,7 +12,7 @@
 	margin: 50px 0 70px;
 
 	&__inner {
-		@include breakpoint(md) {
+		@include breakpoint(tablet) {
 			display: flex;
 			margin: 0 -15px;
 		}
@@ -21,7 +21,7 @@
 	.site-main {
 		margin: 0 0 50px;
 
-		@include breakpoint(md) {
+		@include breakpoint(tablet) {
 			margin: 0;
 			width: 75%;
 			padding: 0 15px;
@@ -29,7 +29,7 @@
 	}
 
 	.sidebar {
-		@include breakpoint(md) {
+		@include breakpoint(tablet) {
 			width: 25%;
 			padding: 0 15px;
 		}
@@ -43,7 +43,7 @@
 		margin: 0 0 30px;
 		line-height: 1;
 
-		@include breakpoint(md) {
+		@include breakpoint(tablet) {
 			font-size: 80px;
 		}
 	}

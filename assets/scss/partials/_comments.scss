@@ -12,7 +12,7 @@
 		&.children {
 			padding-left: 20px;
 
-			@include breakpoint(md) {
+			@include breakpoint(tablet) {
 				padding-left: 40px;
 			}
 		}
@@ -67,7 +67,7 @@
 .comment-respond {
 	margin-top: 30px;
 
-	@include breakpoint(md) {
+	@include breakpoint(tablet) {
 		margin-top: 50px;
 	}
 }
