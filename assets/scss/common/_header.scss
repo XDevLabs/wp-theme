@@ -36,7 +36,7 @@ body {
 	}
 
 	&__branding {
-		@include breakpoint-down(md) {
+		@include breakpoint-down(767px) {
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
@@ -113,7 +113,7 @@ body {
 }
 
 .main-navigation {
-	@include breakpoint-down(md) {
+	@include breakpoint-down(767px) {
 		position: fixed;
 		z-index: 9999;
 		width: 300px;
@@ -200,7 +200,7 @@ body {
 			}
 
 			&.menu-item-has-children {
-				@include breakpoint-down(md) {
+				@include breakpoint-down(767px) {
 					position: relative;
 				}
 
@@ -226,7 +226,7 @@ body {
 				}
 
 				.toggle-sub-menu {
-					@include breakpoint-down(md) {
+					@include breakpoint-down(767px) {
 						position: absolute;
 						top: 0;
 						right: 0;
@@ -258,7 +258,7 @@ body {
 
 				&.shown-sub {
 					> .sub-menu {
-						@include breakpoint-down(md) {
+						@include breakpoint-down(767px) {
 							display: block;
 						}
 					}
