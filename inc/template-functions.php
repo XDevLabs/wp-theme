@@ -35,3 +35,39 @@ function xdevlabs_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'xdevlabs_pingback_header' );
+
+add_filter( 'block_categories_all', function( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug'  => 'xdevlabs',
+                'title' => 'XDevlabs Blocks',
+            ),
+        )
+    );
+}, 10, 2 );
+
+function xdevlabs_register_blocks()
+{
+    $blocks = [
+        'slider',
+    ];
+
+    foreach ($blocks as $block) {
+        register_block_type( get_template_directory() . '/blocks/' . $block );
+    }
+}
+add_action('init', 'xdevlabs_register_blocks');
+
+if (function_exists('acf_add_options_page')) {
+    add_action('acf/init', function() {
+        acf_add_options_page(array(
+            'page_title' 	=> 'XdevLabs Settings',
+            'menu_title'	=> 'XdevLabs Settings',
+            'menu_slug' 	=> 'xdevlabs-settings',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false
+        ));
+    });
+}

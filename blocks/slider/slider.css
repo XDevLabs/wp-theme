@@ -1,0 +1,126 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 130px;
+}
+.slider__content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.slider__content--item {
+  position: relative;
+  z-index: 1;
+}
+.slider__content--item figure {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.slider__content--item figure::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(62, 62, 62, 0) 41.35%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+.slider__content--item figure img {
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+  min-height: 90vh;
+  width: 100%;
+}
+.slider__content--description {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  padding-inline: 19px;
+  color: var(--white);
+  width: 100%;
+}
+.slider__content--description .slider__title {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 1.2px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--warm-gray);
+  width: 100%;
+  display: block;
+}
+.slider__content--description .slider__sub-heading {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--white);
+}
+.slider__content--description .slider__description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+}
+.slider__content--description p {
+  margin-bottom: 0;
+}
+.slider__content--text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: 30px 120px;
+}
+.slider__thumbnails {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 11px;
+  transform: translateY(60%);
+  padding-inline: 11px;
+}
+.slider__thumbnails--item {
+  max-width: calc(33.33% - 6px);
+  cursor: pointer;
+}
+.slider__thumbnails--item figure {
+  border-radius: 10px;
+  position: relative;
+}
+.slider__thumbnails--item figure figcaption {
+  position: absolute;
+  left: 0;
+  top: -25px;
+}
+.slider__thumbnails--item img {
+  aspect-ratio: 2/1;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+.slider__thumbnails--item.active figure {
+  position: relative;
+}
+.slider__thumbnails--item.active figure::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  z-index: 2;
+  background: var(--disabled);
+  top: calc(100% + 8px);
+}
+.slider__thumbnails--item.active figure figcaption {
+  color: var(--white);
+}
+
+/*# sourceMappingURL=slider.css.map */

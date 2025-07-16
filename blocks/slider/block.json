@@ -1,0 +1,17 @@
+{
+  "name": "acf/slider",
+  "title": "Slider",
+  "description": "Slider block for displaying a series of images or content in a carousel format.",
+  "style": [ "file:./slider.css" ],
+  "script": [ "file:./slider.js" ],
+  "category": "xdevlabs",
+  "icon": "smiley",
+  "keywords": ["slider", "slider section", "slider grid"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./slider.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
