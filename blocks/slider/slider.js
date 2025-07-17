@@ -6,6 +6,11 @@
       $('.slider__thumbnails--item').removeClass('active');
       $('.slider__content').slick('slickGoTo', slickIndex);
       $(this).addClass('active');
-    })
+    });
+
+    $('.slider__content').on('afterChange', function(event, slick, currentSlide){
+      $('.slider__thumbnails--item').removeClass('active');
+      $('.slider__thumbnails--item[data-slick-index="' + currentSlide + '"]').addClass('active');
+    });
   });
 })(jQuery)
