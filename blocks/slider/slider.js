@@ -8,9 +8,11 @@
       $(this).addClass('active');
     });
 
+    // set active thumbnail when slider changes
     $('.slider__content').on('afterChange', function(event, slick, currentSlide){
       $('.slider__thumbnails--item').removeClass('active');
       $('.slider__thumbnails--item[data-slick-index="' + currentSlide + '"]').addClass('active');
     });
+
   });
 })(jQuery)
